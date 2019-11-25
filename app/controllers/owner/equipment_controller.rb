@@ -5,6 +5,7 @@ class Owner::EquipmentController < ApplicationController
 
   def create
     @equipment = Equipment.new(equipment_params)
+    @equipment.owner = current_user
 
     if @equipment.save
       redirect_to equipment_path(@equipment)
