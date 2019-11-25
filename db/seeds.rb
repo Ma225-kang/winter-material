@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-equipment = ["skis","outfit","helmet","gloves","wool socks","my grandma sweater"]
+equipment_types = ["skis","outfit","helmet","gloves","wool socks","my grandma sweater"]
 description = ["good state", "dirty but useable", "old but useful", "have fun"]
 status = ["not available", "available", "pending"]
 price = [ 12, 34, 53, 89]
@@ -26,13 +26,13 @@ puts "starting seeds..."
   ophe.save!
 
 10.times do
-  equipment = Equipment.new(owner: lyly, name: equipment.sample ,description: description.sample , address: Faker::Address.city ,price_per_day: price.sample )
+  equipment = Equipment.new(owner: lyly, name: equipment_types.sample ,description: description.sample , address: Faker::Address.city ,price_per_day: price.sample )
   equipment.save!
 end
 
-  reservation = Reservation.new(equipment: Equipment.all.sample, user: mn , start_date: Faker::Date.forward(days: 2), end_date: Faker::Date.forward(days: 23),status: status.sample,total_price: equipment.price_per_day * 2 )
+  reservation = Reservation.new(equipment: Equipment.all.sample, user: mn , start_date: Faker::Date.forward(days: 2), end_date: Faker::Date.forward(days: 23),status: status.sample)
   reservation.save!
-  reservation = Reservation.new(equipment: Equipment.all.sample, user: ophe, start_date: Faker::Date.forward(days: 2), end_date: Faker::Date.forward(days: 23),status: status.sample,total_price: equipment.price_per_day * 2 )
+  reservation = Reservation.new(equipment: Equipment.all.sample, user: ophe, start_date: Faker::Date.forward(days: 2), end_date: Faker::Date.forward(days: 23),status: status.sample)
   reservation.save!
 
 puts "Done with seeds..."
