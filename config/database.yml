@@ -83,3 +83,4 @@ production:
   database: winter-material_production
   username: winter-material
   password: <%= ENV['WINTER-MATERIAL_DATABASE_PASSWORD'] %>
+  url: <%= ENV['POSTGRESQL_ADDON_URI'] %>
