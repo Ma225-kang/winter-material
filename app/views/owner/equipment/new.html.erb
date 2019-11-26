@@ -1,10 +1,14 @@
-<div class="form-new-equipment">
-  <h1>Add your equipment</h1>
-  <%= simple_form_for [:owner, @equipment] do |f| %>
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :address %>
-    <%= f.input :price_per_day %>
-    <%= f.submit 'Add', class: 'btn btn-primary' %>
-  <% end %>
+<div class="container-new-equipment">
+  <div class="form-new-equipment">
+    <h1>Add your equipment</h1>
+    <%= simple_form_for [:owner, @equipment] do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :address %>
+      <%= f.input :price_per_day %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.submit 'ADD', class: "btn btn-primary" %>
+    <% end %>
+  </div>
 </div>
