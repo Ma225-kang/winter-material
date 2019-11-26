@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :equipment, foreign_key: :owner_id # => Mes equipements
 
   has_many :owner_reservations, through: :equipment, source: :reservations # => Les resa faites sur mes equipements
+  mount_uploader :photo, PhotoUploader
+
 end
 
 # current_user.reservations
