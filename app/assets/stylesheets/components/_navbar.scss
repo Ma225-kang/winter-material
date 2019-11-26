@@ -9,4 +9,20 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+  height: 40px;
+}
+
+.navbar-lewagon p {
+  font-family:'Permanent Marker', cursive;
+  font-size: 30px;
+  padding-top: 5px;
+
+  a {
+    color: black;
+  }
+
+  :hover {
+    color: #4DD599;
+    text-decoration: none;
+  }
 }
