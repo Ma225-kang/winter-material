@@ -1,4 +1,10 @@
-<h1>Equipment Index</h1>
-<%= @equipment %>
+<h1>Equipment</h1>
+
+<ul>
+  <% @equipment.each do |equipment| %>
+    <li> <%= link_to equipment.owner.first_name, equipment_path(equipment) %>
+     <%= equipment.owner.last_name.capitalize %>  : <%= equipment.name %></li>
+  <% end %>
+</ul>
 
 <%= link_to 'Add an equipment', new_owner_equipment_path %>
