@@ -1,0 +1,6 @@
+<h1>Add your equipment!</h1>
+
+<%= simple_form_for [:owner, @equipment] do |f| %>
+  <%= f.input :name %>
+  <%= f.submit 'Add', class: 'btn btn-primary' %>
+<% end %>

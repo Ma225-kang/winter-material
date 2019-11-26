@@ -1,5 +1,7 @@
 class EquipmentController < ApplicationController
-
   def index
+    @equipment = Equipment.all
   end
-end
+
+  def show
+    @equipment = Equipment.find(params[:id])
