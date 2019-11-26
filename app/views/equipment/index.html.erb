@@ -1,6 +1,6 @@
 <div class="container-winter">
   <h1 class="title">Hi there 👋🏼,</h1>
-  <h1 class="title">Welcome on your equipment index !!</h1>
+  <h1 class="title">Welcome on Winter Material !!</h1>
   <div class="item">
     <% @equipment.each do |item| %>
       <div class="card-product">
@@ -12,5 +12,7 @@
       </div>
     <% end %>
   </div>
-  <%= link_to 'Add an equipment', new_owner_equipment_path, class: "button" %>
+  <%= link_to new_owner_equipment_path, class: "link-add-equipment" do %>
+    <i class="fas fa-plus"></i><p>Add equipment</p>
+  <% end %>
 </div>
