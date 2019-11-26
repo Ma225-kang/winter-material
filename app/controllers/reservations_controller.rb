@@ -4,11 +4,13 @@ class ReservationsController < ApplicationController
   end
 
   def new
+    @equipment = Equipment.find(params[:equipment_id])
     @reservation = Reservation.new
   end
 
   def create
     @reservation = Reservation.new(reservation_params)
+    @reservation.save
   end
 
   private
