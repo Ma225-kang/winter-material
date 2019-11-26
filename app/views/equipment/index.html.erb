@@ -1,14 +1,16 @@
-<div class="container">
-  <h1 class="title">Equipment Index</h1>
-    <div class="row">
-      <% @equipment.each do |item| %>
-        <div class="item">
-        <%= item.name %> - <%= item.description %>
-        <%= item.photo  %>
+<div class="container-winter">
+  <h1 class="title">Hi there 👋🏼,</h1>
+  <h1 class="title">Welcome on your equipment index !!</h1>
+  <div class="item">
+    <% @equipment.each do |item| %>
+      <div class="card-product">
+        <%= cl_image_tag item.photo, crop: :fill, height: 100 %>
+        <div class="card-product-infos">
+          <h2><%= link_to item.name, equipment_path(item) %></h2>
+          <p><%= item.description %></p>
         </div>
-      <% end %>
-    </div>
-    <a class="btn btn-flat" href="#">
-      <%= link_to 'Add an equipment', new_owner_equipment_path %>
-    </a>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to 'Add an equipment', new_owner_equipment_path, class: "button" %>
 </div>

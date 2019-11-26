@@ -1,26 +1,27 @@
 // Specific CSS for your home-page
-
-.container {
+.container-winter {
   background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('snow.jpeg');
   background-size: cover;
-  background-position: center;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
+  width: 100%;
+  padding-bottom: 20px;
+  text-align: center;
+  font-family: Helvetica;
 }
 
 .title {
+  width: 100%;
+  font-size: 20px;
   color: white;
+  letter-spacing: 5px;
+  text-align: center;
+  padding-top: 20px;
+
 }
 
 .item {
   padding: 20px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
-  border: 1px solid white;
-  background-color: white;
-  height: 200px;
-  width: 400px;
 }
 
