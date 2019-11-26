@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
 .container-winter {
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('snow.jpeg');
+  background-image: linear-gradient(rgba(255,255,255,0.4),rgba(255,255,255,0.4)), url('snow.jpeg');
   background-size: cover;
   width: 100%;
   padding-bottom: 20px;
@@ -17,10 +17,21 @@
 }
 
 .item {
-  padding: 20px;
+  padding: 40px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 10px;
+  grid-gap: 30px;
+
+}
+
+.link-add-equipment {
+  text-decoration: none;
+  color: #477BC8;
+
+}
+
+.container-winter {
+  text-align: center;
 }
 
 @media(max-width: 992px) {
@@ -29,8 +40,14 @@
   }
 }
 
-@media(max-width: 768px) {
+@media(max-width: 848px) {
   .item {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 558px) {
+  .item {
+    grid-template-columns: 1fr;
   }
 }
