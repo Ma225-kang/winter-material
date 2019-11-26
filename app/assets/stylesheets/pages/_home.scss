@@ -1,13 +1,10 @@
 // Specific CSS for your home-page
-
 .snow-image {
   background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), asset-url('snow.jpeg');
 
 }
 
-
 .equipment {
-
   display: grid;
   grid-template-column: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
@@ -17,4 +14,3 @@
   height: 200px;
   width: 400px;
 }
-
