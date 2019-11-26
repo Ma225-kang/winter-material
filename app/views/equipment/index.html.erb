@@ -1,10 +1,11 @@
-<h1>Equipment</h1>
 
-<ul>
-  <% @equipment.each do |equipment| %>
-    <li> <%= link_to equipment.owner.first_name, equipment_path(equipment) %>
-     <%= equipment.owner.last_name.capitalize %>  : <%= equipment.name %></li>
-  <% end %>
-</ul>
-
-<%= link_to 'Add an equipment', new_owner_equipment_path %>
+<div class="title snow-image"><h1>Equipment Index</h1>
+  <div class="equipment">
+      <% @equipment.each do |item| %>
+      <div class="col-sm-6">
+        <%= item.name %> - <%= item.description %>
+        <%= item.photo  %>
+      </div>
+     <% end %>
+  </div>
+  <a class="btn btn-flat" href="#"><%= link_to 'Add an equipment', new_owner_equipment_path %></a>
