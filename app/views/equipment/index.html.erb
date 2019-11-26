@@ -1,11 +1,14 @@
-
-<div class="title snow-image"><h1>Equipment Index</h1>
-  <div class="equipment">
+<div class="container">
+  <h1 class="title">Equipment Index</h1>
+    <div class="row">
       <% @equipment.each do |item| %>
-      <div class="col-sm-6">
+        <div class="item">
         <%= item.name %> - <%= item.description %>
         <%= item.photo  %>
-      </div>
-     <% end %>
-  </div>
-  <a class="btn btn-flat" href="#"><%= link_to 'Add an equipment', new_owner_equipment_path %></a>
+        </div>
+      <% end %>
+    </div>
+    <a class="btn btn-flat" href="#">
+      <%= link_to 'Add an equipment', new_owner_equipment_path %>
+    </a>
+</div>

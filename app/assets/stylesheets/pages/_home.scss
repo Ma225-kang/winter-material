@@ -1,18 +1,24 @@
 // Specific CSS for your home-page
 
-.snow-image {
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), asset-url('snow.jpeg');
-
+.container {
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('snow.jpeg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
+.title {
+  color: white;
+}
 
-.equipment {
-
+.item {
+  padding: 20px;
   display: grid;
-  grid-template-column: 1fr 1fr 1fr 1fr;
-  grid-gap: 20px;
-  justify-content: space-around;
-  border: 1px solid grey;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  border: 1px solid white;
   background-color: white;
   height: 200px;
   width: 400px;
