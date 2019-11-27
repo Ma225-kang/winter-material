@@ -1,0 +1,34 @@
+<div class="container">
+<table>
+  <thead>
+    <tr>
+      <th scope="col">My equipment</th>
+      <th scope="col">Description</th>
+      <th scope="col">From</th>
+      <th scope="col">To</th>
+      <th scope="col">Total price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @reservations.each do |reservation| %>
+    <tr>
+      <th scope="row">
+        <%= reservation.equipment.name.capitalize %>
+      </th>
+      <td>
+        <%= reservation.equipment.description %>
+      </td>
+      <td>
+        <%= reservation.start_date %>
+      </td>
+      <td>
+        <%= reservation.end_date %>
+      </td>
+      <td>
+        <%= reservation.total_price %><%= '€' %>
+      </td>
+    </tr>
+          <% end  %>
+  </tbody>
+</table>
+</div>
