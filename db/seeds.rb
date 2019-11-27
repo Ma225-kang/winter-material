@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 equipment_names = ["skis","outfit","helmet","gloves","wool socks","my grandma sweater"]
 description = ["good state", "dirty but useable", "old but useful", "have fun"]
+cities = ['Nantes', 'Paris', 'Bordeaux', 'Lyon' ]
 url_pic = ["https://images.unsplash.com/photo-1551524559-8af4e6624178?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=926&q=80","https://images.unsplash.com/photo-1453694595360-51e193e121fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=966&q=80" ,"https://images.unsplash.com/photo-1485839240317-550557b58b49?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" ,"https://images.unsplash.com/photo-1557761873-69fdf401fb79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" ,"https://images.unsplash.com/photo-1553981066-cdfecb228180?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80" ,"https://images.unsplash.com/photo-1455128677232-0413bef74851?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" ]
 price = [ 12, 34, 53, 89]
 
@@ -14,7 +15,7 @@ attributes = equipment_names.map do |name|
   {
     name: name,
     description: description.sample,
-    address: Faker::Address.city,
+    address: cities.sample,
     price_per_day: price.sample
   }
 
@@ -45,6 +46,7 @@ attributes.each_with_index do |attr, index|
   equipment.owner = lyly
   equipment.remote_photo_url = url_pic[index]
   equipment.save!
+  sleep(1)
 end
 
   reservation = Reservation.new(equipment: Equipment.all.sample, user: mn , start_date: Faker::Date.forward(days: 2), end_date: Faker::Date.forward(days: 23),status: status.sample)
