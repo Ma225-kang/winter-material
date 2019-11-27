@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   #pour que le owner voit ses equipements
   namespace :owner do
-    resources :equipment, only: [:index, :new, :create]
+    resources :equipment, only: [:index, :new, :create, :destroy]
     resources :reservations, only: [:index] do
       member do
         patch 'accept'

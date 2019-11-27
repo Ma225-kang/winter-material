@@ -1,8 +1,22 @@
+<div class="container-product">
+    <div class="product">
+      <h2><%= @equipment.name %></h2>
+      <p>by <%  %></p>
+      <p> description: <%= @equipment.description %></p>
+      <p>price per day: <strong> <%= @equipment.price_per_day %>€</strong></p>
+      <%= cl_image_tag @equipment.photo, height: 300, width: 400, crop: :fill %>
+    </div>
 
-<h1>My equipments</h1>
-<ul>
-  <li><%= @equipment.name %></li>
-  <li><%= @equipment.description %></li>
-</ul>
 
-<%= link_to "Book me!", new_equipment_reservation_path(@equipment[:id]) %>
+    <div class="action delete" >
+      <div class="row">
+        <%= link_to " << Back", equipment_path, class: "button" %>
+        <% if user_signed_in? %>
+         <% if current_user == @equipment.owner %>
+          <%= link_to "Delete me!", owner_equipment_path(@equipment), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+          <% end%>
+        <% end %>
+        <%= link_to "Book >>", new_equipment_reservation_path(@equipment[:id]), class: "button" %>
+      </div>
+    </div>
+</div>

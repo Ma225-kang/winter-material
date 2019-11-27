@@ -1,0 +1,25 @@
+.container-product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  background-image: url('snow');
+  background-size: cover;
+  background-position: center;
+}
+
+
+
+.product {
+  background-color: white;
+  margin-top : 15px;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.delete {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+
