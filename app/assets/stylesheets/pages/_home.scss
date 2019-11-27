@@ -66,3 +66,9 @@
     order: 2;
   }
 }
+
+@media(max-width: 290px) {
+  .card-product {
+    flex-grow: 1;
+  }
+}
