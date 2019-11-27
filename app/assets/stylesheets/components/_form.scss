@@ -1,5 +1,5 @@
-// container-form : New equipment, sign in & signup form
-.container-form {
+// box-form : New equipment, sign in & signup form
+.box-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,13 +42,7 @@
 }
 
 // Button new equipment
-.btn .btn-primary {
-  width: 100px;
-  border-radius: 5px;
-  background-color: #4DD599;
-  border: none;
-  margin: 10px 120px 10px 120px;
-}
+//ci-git ce commentaire en rappel de ne SURTOUT PAS REÉCRIRE LES CLASSES BOOSTRAP!!!!!!}
 
 // Reservation form
 .form-new-reservation {

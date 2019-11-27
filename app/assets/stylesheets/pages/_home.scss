@@ -1,5 +1,5 @@
 // Specific CSS for your home-page
-.container-winter {
+.box-winter {
   background-image: linear-gradient(rgba(255,255,255,0.4),rgba(255,255,255,0.4)), asset-url('snow.jpeg');
   background-size: cover;
   width: 100vw;
@@ -44,25 +44,25 @@
     grid-template-columns: 1fr;
   }
 
-  .container-winter {
+  .box-winter {
     justify-content: space-between;
   }
 
-  .container-item {
+  .box-item {
     flex-grow: 1;
   }
 }
 
 @media(max-width: 800px) {
-  .container-winter {
+  .box-winter {
     flex-direction: column;
   }
 
-  .map-container {
+  .map-box {
     order: 1;
   }
 
-  .container-item {
+  .box-item {
     order: 2;
   }
 }

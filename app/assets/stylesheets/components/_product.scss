@@ -1,9 +1,9 @@
-.container-product {
+.box-product {
   display: flex;
   flex-direction: column;
   align-items: center;
   align-content: center;
-  background-image: url('snow');
+  background-image: asset-url('snow');
   background-size: cover;
   background-position: center;
 }
