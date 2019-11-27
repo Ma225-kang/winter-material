@@ -1,7 +1,7 @@
 <div class="container-product">
     <div class="product">
-      <h2><%= @equipment.name %></h2>
-      <p>by <%  %></p>
+      <h2 ><%= @equipment.name %></h2>
+      <p>  by <%= @equipment.owner.first_name%></p>
       <p> description: <%= @equipment.description %></p>
       <p>price per day: <strong> <%= @equipment.price_per_day %>€</strong></p>
       <%= cl_image_tag @equipment.photo, height: 300, width: 400, crop: :fill %>
@@ -9,14 +9,14 @@
 
 
     <div class="action delete" >
-      <div class="row">
-        <%= link_to " << Back", equipment_path, class: "button" %>
+      <div class="buttons-line">
+        <%= link_to " << Back", root_path, class: "buttongreen" %>
         <% if user_signed_in? %>
          <% if current_user == @equipment.owner %>
-          <%= link_to "Delete me!", owner_equipment_path(@equipment), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+          <%= link_to "Delete me!", owner_equipment_path(@equipment), method: :delete, data: { confirm: 'Are you sure?' }, class: "buttondangerous" %>
           <% end%>
         <% end %>
-        <%= link_to "Book >>", new_equipment_reservation_path(@equipment[:id]), class: "button" %>
+        <%= link_to "Book >>", new_equipment_reservation_path(@equipment[:id]), class: "buttongreen" %>
       </div>
     </div>
 </div>

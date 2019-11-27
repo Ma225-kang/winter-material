@@ -8,8 +8,6 @@
   background-position: center;
 }
 
-
-
 .product {
   background-color: white;
   margin-top : 15px;
@@ -23,3 +21,39 @@
 }
 
 
+.buttondangerous {
+  border: 1px solid #dcdcdc;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: #DABC2A;
+  border: none;
+  margin: 10px 10px 10px 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.buttongreen {
+  border: 1px solid #dcdcdc;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: #4DD599;
+  border: none;
+  margin: 10px 10px 10px 10px;
+  color: white;
+  cursor: pointer;
+}
+
+
+.buttons-line {
+  display: flex;
+  justify-content: space-between;
+
+}
