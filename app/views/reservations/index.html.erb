@@ -2,11 +2,12 @@
 <table>
   <thead>
     <tr>
-      <th scope="col">My equipment</th>
+      <th id="coin_sup_gauche" scope="col">My equipment</th>
       <th scope="col">Description</th>
       <th scope="col">From</th>
       <th scope="col">To</th>
       <th scope="col">Total price</th>
+      <th id="coin_sup_droit" scope="col">Status</th>
     </tr>
   </thead>
   <tbody>
@@ -26,6 +27,9 @@
       </td>
       <td>
         <%= reservation.total_price %><%= '€' %>
+      </td>
+      <td>
+        <%= reservation.status %>
       </td>
     </tr>
           <% end  %>
