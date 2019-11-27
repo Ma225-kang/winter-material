@@ -1,8 +1,21 @@
+<div class="container-form">
 
-<h1>My equipments</h1>
-<ul>
-  <li><%= @equipment.name %></li>
-  <li><%= @equipment.description %></li>
-</ul>
+  <div class="product">
+    <h2><%= @equipment.name  %></h2>
+    <p> description: <%= @equipment.description %></p>
+    <p>price per day: <%= @equipment.price_per_day %>€</p>
+    <%= cl_image_tag @equipment.photo, height: 300, width: 400, crop: :fill %>
+  </div>
 
-<%= link_to "Book me!", new_equipment_reservation_path(@equipment[:id]) %>
+  <div class="action">
+    <div class="row">
+      <%= link_to " << Back", equipment_path, class: "button" %>
+      <%= link_to "Book >>", new_equipment_reservation_path(@equipment[:id]), class: "button" %>
+      <% if user_signed_in? %>
+       <% if current_user == @equipment.owner %>
+        <%= link_to "Delete me!", owner_equipment_path(@equipment), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+        <% end%>
+      <% end %>
+    </div>
+  </div>
+</div>
