@@ -17,6 +17,6 @@ class Owner::EquipmentController < ApplicationController
   private
 
   def equipment_params
-    params.require(equipment).permit(:name, :description, :photo, :address, :price_per_day)
+    params.require(:equipment).permit(:name, :description, :photo, :address, :price_per_day)
   end
 end

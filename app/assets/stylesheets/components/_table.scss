@@ -1,0 +1,34 @@
+table {
+  margin-top: 30px;
+
+  th {
+    width: 200px;
+    height: 50px;
+  }
+}
+
+
+thead {
+  background-color: #DCD579;
+
+  th {
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  th:not(:first-child) {
+   border-left: 1px solid white;
+  }
+}
+
+tbody {
+  border-left: 0.5px dashed #C4C4C4;
+  border-right: 0.5px dashed #C4C4C4;
+  border-bottom: 0.5px dashed #C4C4C4;
+}
+
+tbody, th, td {
+  text-align: center;
+  vertical-align: middle;
+}
