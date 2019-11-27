@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'faker'
+
 equipment_names = ["skis","outfit","helmet","gloves","wool socks","my grandma sweater"]
 description = ["good state", "dirty but useable", "old but useful", "have fun"]
 cities = ['Nantes', 'Paris', 'Bordeaux', 'Lyon' ]
