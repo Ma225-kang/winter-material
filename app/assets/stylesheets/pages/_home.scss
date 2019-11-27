@@ -2,9 +2,11 @@
 .container-winter {
   background-image: linear-gradient(rgba(255,255,255,0.4),rgba(255,255,255,0.4)), url('snow.jpeg');
   background-size: cover;
-  width: 100%;
-  padding-bottom: 210px;
+  width: 100vw;
+  padding: 0px 40px 20px 20px;
+  display: flex;
 }
+
 
 .title {
   width: 100%;
@@ -18,7 +20,7 @@
 .item {
   padding: 40px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 30px;
 
 }
@@ -26,27 +28,41 @@
 .link-add-equipment {
   text-decoration: none;
   color: #477BC8;
-
-}
-
-.container-winter {
   text-align: center;
+
 }
 
-@media(max-width: 992px) {
-  .item {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-@media(max-width: 848px) {
+@media(max-width: 1292px) {
   .item {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-@media(max-width: 558px) {
+
+@media(max-width: 990px) {
   .item {
     grid-template-columns: 1fr;
+  }
+
+  .container-winter {
+    justify-content: space-between;
+  }
+
+  .container-item {
+    flex-grow: 1;
+  }
+}
+
+@media(max-width: 800px) {
+  .container-winter {
+    flex-direction: column;
+  }
+
+  .map-container {
+    order: 1;
+  }
+
+  .container-item {
+    order: 2;
   }
 }
