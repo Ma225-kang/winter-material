@@ -8,7 +8,8 @@ class EquipmentController < ApplicationController
       {
         lat: equip.latitude,
         lng: equip.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { equipment: equip })
+        infoWindow: render_to_string(partial: "info_window", locals: { equipment: equip }),
+        image_url: helpers.asset_url('pointer-ski.png')
       }
     end
   end
