@@ -60,7 +60,7 @@
     .card-trip {
     overflow: hidden;
     background: white;
-    width: 250px;
+    width: 270px;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
   }
 
@@ -97,5 +97,10 @@
     top: -20px;
     width: 40px;
     height: 40px;
+  }
+
+  .card-link {
+    text-decoration: none;
+    color: #5F5F5F;
   }
 }
