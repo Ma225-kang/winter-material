@@ -16,11 +16,41 @@
 .button:hover {
   background-color:#4DD599;
   text-decoration: none;
-  color: #329368;
   font-weight: bold;
+  box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
 }
 
 
 .button.reservation {
-  margin-left: 0;
+  margin: 0;
+}
+
+.buttondangerous {
+  border: 1px solid #dcdcdc;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: #DABC2A;
+  border: none;
+  margin: 10px 10px 10px 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.buttongreen {
+  border: 1px solid #dcdcdc;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: #4DD599;
+  border: none;
+  margin: 10px 10px 10px 10px;
+  color: white;
+  cursor: pointer;
 }

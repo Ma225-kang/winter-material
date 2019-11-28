@@ -1,59 +1,84 @@
-.box-product {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  background-image: asset-url('snow');
-  background-size: cover;
-  background-position: center;
-}
+// .box-product {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   align-content: center;
+//   background-image: asset-url('snow');
+//   background-size: cover;
+//   background-position: center;
+// }
 
-.product {
+// .product {
+//   position: relative;
+//   background-color: white;
+//   margin-top : 15px;
+//   border-radius: 5px;
+//   padding: 15px;
+// }
+
+.d-flex.flex-column {
   background-color: white;
-  margin-top : 15px;
-  border-radius: 5px;
-  padding: 15px;
+  margin-top: 20px;
 }
 
-.delete {
-  display: grid;
-  grid-template-columns: 1fr;
+.equipment-photo {
+  border-radius: 10px;
+  margin: 20px 0 0 0;
+  width: 400px;
+  height: 350px;
+  background-size: center;
+  background-position: cover;
+}
+
+.product-description {
+  margin-left: 25px;
+
+  h1 {
+    padding-top: 13px;
+    padding-bottom: 5px;
+    font-size: 23px;
+  }
+
+  .price-per-day {
+    color: white;
+    background-color: #6d6d6d;
+    width: 75px;
+    padding-left: 5px;
+    border-radius: 5px;
+  }
+}
+
+.owner-card {
+  margin-top: 10px;
+
+  p {
+    padding-top: 5px;
+  }
 }
 
 
-.buttondangerous {
-  border: 1px solid #dcdcdc;
-  display: inline-block;
-  font-size: 15px;
-  font-weight: bold;
-  padding: 6px 24px;
+.reservation {
+  margin-top: 10px;
+
+  h1 {
+    font-size: 25px;
+    padding-bottom: 10px;
+  }
+
+  a {
+  color: black;
   text-decoration: none;
-  border-radius: 5px;
-  background-color: #DABC2A;
-  border: none;
-  margin: 10px 10px 10px 10px;
-  color: white;
-  cursor: pointer;
+  }
 }
 
-.buttongreen {
-  border: 1px solid #dcdcdc;
-  display: inline-block;
-  font-size: 15px;
-  font-weight: bold;
-  padding: 6px 24px;
-  text-decoration: none;
-  border-radius: 5px;
-  background-color: #4DD599;
-  border: none;
-  margin: 10px 10px 10px 10px;
-  color: white;
-  cursor: pointer;
-}
+// .delete {
+//   display: grid;
+//   grid-template-columns: 1fr;
+// }
 
+// .buttons-line {
+//   display: flex;
+//   justify-content: space-between;
 
-.buttons-line {
-  display: flex;
-  justify-content: space-between;
+// }
 
-}
