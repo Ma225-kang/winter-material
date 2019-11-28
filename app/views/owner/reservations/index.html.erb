@@ -30,7 +30,8 @@
         <%= reservation.total_price %><%= '€' %>
       </td>
       <td>
-        <%= reservation.status %>
+        <%= link_to "accept", accept_owner_reservation_path(current_user), method: :accept, data: { confirm: 'Are you sure?' }, class: "buttongreen" %>
+        <%= link_to "decline", owner_equipment_path(current_user), method: :decline, data: { confirm: 'Are you sure?' }, class: "buttondangerous" %>
       </td>
     </tr>
           <% end  %>
