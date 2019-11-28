@@ -11,38 +11,29 @@
 <% end %>
   </div>
 </div>
-
 <div class="box-all-index">
   <div class="box-winter">
 
     <div class="box-item">
       <div class="item">
-
-
         <% @equipment.each do |item| %>
-
-        <div class="card-trip">
-          <%= cl_image_tag item.photo, crop: :fill, height: 100 %>
-          <div class="card-trip-infos">
-            <div>
-              <h2><%= link_to item.name.capitalize, equipment_path(item) %></h2>
-              <p><%= item.description.capitalize %></p>
-              <p><%= item.price_per_day %><%= '€' %></p>
+          <%= link_to equipment_path(item), class: "card-link" do %>
+          <div class="card-trip">
+            <%= cl_image_tag item.photo, crop: :fill, height: 100 %>
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= item.name.capitalize %></h2>
+                <p><%= item.description.capitalize %></p>
+                <p><%= item.price_per_day %><%= '€' %></p>
+              </div>
+              <h2 class="card-trip-pricing"><%= item.price_per_day %><%= '€ /day' %></h2>
+              <%= cl_image_tag item.owner.photo,class: "card-trip-user avatar-bordered"%>
             </div>
-            <h2 class="card-trip-pricing"><%= item.price_per_day %><%= '€ /day' %></h2>
-            <%= cl_image_tag item.owner.photo,class: "card-trip-user avatar-bordered"%>
           </div>
-        </div>
-
+          <% end %>
         <% end %>
-
-
       </div>
     </div>
-
-
-
-
     <div class="map-container">
       <div
         id="map"

@@ -5,11 +5,17 @@
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  .avatar {
+    background-size: cover;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+  }
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
 }
 
 .navbar-lewagon p {
