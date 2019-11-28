@@ -1,24 +1,20 @@
 class Owner::ReservationsController < ApplicationController
 
   def index
-    @reservations = current_user.reservations
+    @reservations = current_user.owner_reservations
   end
 
   def accept
-    @reservations = current_user.reservations
-    @reservations.update(reservation_params(:status))
-    @reservations.status = "accepted"
+    @reservation = Reservation.find(params[:id])
+    @reservation.status = "accepted"
+    @reservation.save
     redirect_to owner_reservations_path(current_user)
   end
 
   def decline
-    @reservations = current_user.reservations
+    @reservations = Reservation.find(params[:id])
     @reservation.status = "declined"
-  end
-
-  private
-
-  def reservation_params
-    reservation_params = params.require(:reservation).permit(:status)
+    @reservation.save
+    redirect_to owner_reservations_path(current_user)
   end
 end
