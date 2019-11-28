@@ -13,7 +13,9 @@ Rails.application.routes.draw do
     resources :reservations, only: [:index] do
       member do
         patch 'accept'
+        post 'accept'
         patch 'decline'
+        post 'decline'
       end
     end
   end
