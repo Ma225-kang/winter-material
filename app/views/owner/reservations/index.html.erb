@@ -30,7 +30,14 @@
         <%= reservation.total_price %><%= '€' %>
       </td>
       <td>
-        <%= reservation.status %>
+        <% if reservation.status == "pending" %>
+          <%= link_to "accept", accept_owner_reservation_path(reservation), method: :patch, data: { confirm: 'Are you sure?' }, class: "buttongreen" %>
+          <%= link_to "decline", decline_owner_reservation_path(reservation), method: :patch, data: { confirm: 'Are you sure?' }, class: "buttondangerous" %>
+        <% elsif reservation.status == "accepted" %>
+          <%= "accepted" %>
+         <% elsif reservation.status == "declined" %>
+          <%= "declined" %>
+        <% end %>
       </td>
     </tr>
           <% end  %>
