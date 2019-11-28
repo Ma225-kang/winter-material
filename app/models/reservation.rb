@@ -4,6 +4,9 @@ class Reservation < ApplicationRecord
 
   before_create :calculate_total_price
 
+  validates :start_date, presence: true
+  validates :end_date, presence: true
+
   private
 
   def calculate_total_price
