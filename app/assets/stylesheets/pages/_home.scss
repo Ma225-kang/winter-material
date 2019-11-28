@@ -1,10 +1,11 @@
 // Specific CSS for your home-page
 .box-winter {
-  background-image: linear-gradient(rgba(255,255,255,0.4),rgba(255,255,255,0.4)), asset-url('snow.jpeg');
-  background-size: cover;
+  background-color: white;
   width: 100vw;
   padding: 0px 40px 20px 20px;
   display: flex;
+  justify-content: center;
+  align-item: top;
 }
 
 
