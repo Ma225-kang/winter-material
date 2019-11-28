@@ -13,15 +13,15 @@ first_equipment = Equipment.new(
     description: "Very good condition",
     address: "Contamines Montjoie",
     price_per_day: 50,
-    photo: "https://i.ebayimg.com/images/g/EOAAAOSwESxcsTmk/s-l640.jpg"
+    photo: File.open(Rails.root.join("db/fixtures/images/pairofskis.jpeg"))
   )
 
 second_equipment = Equipment.new(
     name: "Helmet",
-    description: "Good",
+    description: "Good condition",
     address: "Paris",
     price_per_day: 34,
-    photo: "https://www.ruroc.com/media/catalog/product/c/h/chaos-ice-snow.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=&width="
+    photo: File.open(Rails.root.join("db/fixtures/images/helmetski.jpeg"))
   )
 
 third_equipment = Equipment.new(
@@ -29,7 +29,7 @@ third_equipment = Equipment.new(
     description: "Like new",
     address: "Courchevel",
     price_per_day: 20,
-    photo: "http://www.assetcoin.uk/images/cate_161/640/1-Pair-Professional-adult-Ski-Gloves-Snowboard-Gloves-Winter-Thermal-Threefinger-outdoor-Warm-Climbing-Waterproof-Snow-Gloves-SFKM20810-jzj0.jpg"
+    photo: File.open(Rails.root.join("db/fixtures/images/glovesski.jpeg"))
   )
 
 fourth_equipment = Equipment.new(
@@ -37,9 +37,24 @@ fourth_equipment = Equipment.new(
     description: "New with tags",
     address: "Lons-le-Saunier",
     price_per_day: 150,
-    photo: "http://cdn.welove2ski.com/wp-content/uploads/unnamed-5.jpg"
+    photo: File.open(Rails.root.join("db/fixtures/images/bootsski.jpeg"))
   )
 
+fifth_equipment = Equipment.new(
+    name: "Ski glasses",
+    description: "Good condition",
+    address: "Lille",
+    price_per_day: 73,
+    photo: File.open(Rails.root.join("db/fixtures/images/skiglass.jpeg"))
+  )
+
+sixth_equipment = Equipment.new(
+    name: "Ski cap",
+    description: "Like new",
+    address: "Dijon",
+    price_per_day: 5,
+    photo: File.open(Rails.root.join("db/fixtures/images/capski.jpeg"))
+  )
 
 # equipment_names = ["skis","outfit","helmet","gloves","wool socks","my grandma sweater"]
 # description = ["good state", "dirty but useable", "old but useful", "have fun"]
@@ -67,11 +82,11 @@ User.destroy_all
 
 puts "starting seeds..."
 
-mn = User.new(first_name: "Marie Noelle", last_name: "Christmas", email: "marie-noelle@example.com", password: "password")
+mn = User.new(first_name: "Marie", last_name: "Christmas", email: "marie-noelle@example.com", password: "password")
 mn.remote_photo_url = "https://images.unsplash.com/photo-1524593689594-aae2f26b75ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
 mn.save!
 lyly = User.new(first_name: "Maylis", last_name: "lyly", email: "mayliscastell@example.com", password: "password")
-lyly.remote_photo_url = "https://images.unsplash.com/photo-1552673304-23f6ad21aada?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+lyly.remote_photo_url = "https://images.unsplash.com/photo-1484863137850-59afcfe05386?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
 lyly.save!
 ophe = User.new(first_name: "Ophélie", last_name: "aux fraises", email: "ophelie@example.com", password: "password")
 ophe.remote_photo_url = "https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
@@ -79,8 +94,14 @@ ophe.save!
 elsa = User.new(first_name: "Elsa", last_name: "Patakis", email: "elsa@example.com", password: "password")
 elsa.remote_photo_url = "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
 elsa.save!
+tom = User.new(first_name: "Tom", last_name: "Hucker", email: "tom@example.com", password: "password")
+tom.remote_photo_url = "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+tom.save!
+arthur = User.new(first_name: "Arthur", last_name: "Dickison", email: "arthur@example.com", password: "password")
+arthur.remote_photo_url = "https://images.unsplash.com/photo-1552673304-23f6ad21aada?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+arthur.save!
 
-first_equipment.owner = lyly
+first_equipment.owner = tom
 first_equipment.save!
 
 second_equipment.owner = mn
@@ -91,6 +112,13 @@ third_equipment.save!
 
 fourth_equipment.owner = elsa
 fourth_equipment.save!
+
+fifth_equipment.owner = lyly
+fifth_equipment.save!
+
+sixth_equipment.owner = arthur
+sixth_equipment.save!
+
 
 # attributes.each_with_index do |attr, index|
 #   equipment = Equipment.new(attr)
