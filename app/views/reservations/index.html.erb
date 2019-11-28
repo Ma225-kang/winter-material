@@ -1,5 +1,5 @@
 <div class="container">
-<h2>I am renting ...</h2>
+<h2>My bookings...</h2>
 <table>
   <thead>
     <tr>
@@ -30,6 +30,7 @@
         <%= reservation.total_price %><%= '€' %>
       </td>
       <td>
+        <div class="center-answer">
           <% if reservation.status == "pending" %>
             <div class="reservation-pending"><%= reservation.status %> <i class="fas fa-spinner"></i></div>
           <% elsif reservation.status == "accepted"%>
@@ -37,6 +38,7 @@
           <% elsif reservation.status == "declined"%>
             <div class="reservation-declined"><%= reservation.status  %> <i class="fas fa-times"></i></div>
           <% end %>
+        </div>
       </td>
     </tr>
           <% end  %>

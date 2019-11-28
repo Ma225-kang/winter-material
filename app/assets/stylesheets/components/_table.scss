@@ -58,19 +58,34 @@ tbody tr:hover {
   background-color: #CCCCCC;
 }
 
-.fas {
-  color: white;
-}
-
-
 .reservation-pending {
-  background-color: #DABC2A;
+  background-color: white ;
+  border: 2px solid #DABC2A ;
+  color: #DABC2A;
+  border-radius: 5px;
+  width: 120px;
+  padding: 3px;
 }
 
 .reservation-confirmed{
-  background-color: #4DD599;
+  background-color: white;
+  border: 2px solid #4DD599;
+  color: #4DD599;
+  border-radius: 5px;
+  width: 120px;
+  padding: 3px;
 }
 
 .reservation-declined {
-  background-color: #D23333;
+  background-color: white;
+  border: 2px solid #D23333;
+  color: #D23333;
+  border-radius: 5px;
+  width: 120px;
+  padding: 3px;
+}
+
+.center-answer {
+  display: flex;
+  justify-content: center;
 }
