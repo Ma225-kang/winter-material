@@ -16,6 +16,8 @@
 
     <div class="box-item">
       <div class="item">
+
+
         <% @equipment.each do |item| %>
           <%= link_to equipment_path(item), class: "winter-card-link" do %>
           <div class="card-trip">
@@ -24,7 +26,6 @@
               <div>
                 <h2><%= item.name.capitalize %></h2>
                 <p><%= item.description.capitalize %></p>
-                <p><%= item.price_per_day %><%= '€' %></p>
               </div>
               <h2 class="card-trip-pricing"><%= item.price_per_day %><%= '€ /day' %></h2>
               <%= cl_image_tag item.owner.photo,class: "card-trip-user avatar-bordered"%>

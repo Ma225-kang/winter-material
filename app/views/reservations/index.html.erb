@@ -1,4 +1,5 @@
 <div class="container">
+<h2>My bookings...</h2>
 <table>
   <thead>
     <tr>
@@ -19,17 +20,25 @@
       <td>
         <%= reservation.equipment.description %>
       </td>
-      <td>
+      <td class="date-column">
         <%= reservation.start_date %>
       </td>
-      <td>
+      <td class="date-column">
         <%= reservation.end_date %>
       </td>
       <td>
         <%= reservation.total_price %><%= '€' %>
       </td>
       <td>
-        <%= reservation.status %>
+        <div class="center-answer">
+          <% if reservation.status == "pending" %>
+            <div class="reservation-pending"><%= reservation.status %> <i class="fas fa-spinner"></i></div>
+          <% elsif reservation.status == "accepted"%>
+            <div class="reservation-confirmed"><%= reservation.status  %> <i class="fas fa-check"></i></div>
+          <% elsif reservation.status == "declined"%>
+            <div class="reservation-declined"><%= reservation.status  %> <i class="fas fa-times"></i></div>
+          <% end %>
+        </div>
       </td>
     </tr>
           <% end  %>

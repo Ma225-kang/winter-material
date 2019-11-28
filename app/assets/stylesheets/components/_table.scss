@@ -57,3 +57,45 @@ tbody tr:nth-child(odd){
 tbody tr:hover {
   background-color: #CCCCCC;
 }
+
+.material-title {
+  padding: 10px;
+}
+
+.date-column {
+  width: 200px;
+}
+
+
+
+.reservation-pending {
+  background-color: white ;
+  border: 2px solid #DABC2A ;
+  color: #DABC2A;
+  border-radius: 5px;
+  width: 120px;
+  padding: 3px;
+}
+
+.reservation-confirmed{
+  background-color: white;
+  border: 2px solid #4DD599;
+  color: #4DD599;
+  border-radius: 5px;
+  width: 120px;
+  padding: 3px;
+}
+
+.reservation-declined {
+  background-color: white;
+  border: 2px solid #D23333;
+  color: #D23333;
+  border-radius: 5px;
+  width: 120px;
+  padding: 3px;
+}
+
+.center-answer {
+  display: flex;
+  justify-content: center;
+}

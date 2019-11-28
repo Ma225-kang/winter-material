@@ -7,7 +7,7 @@
   align-items: center;
 }
 
-.image-pdt-card{
+.image-pdt-card {
   height: 100%;
   width: 120px;
   object-fit: cover;
@@ -33,6 +33,7 @@
 }
 
 .card-product .card-product-infos {
+  background-image: asset-url('ski.jpg');
   padding: 20px;
 }
 
@@ -54,8 +55,6 @@
 }
 
 
-
-
 .box-all-index {
     .card-trip {
     overflow: hidden;
@@ -73,6 +72,7 @@
     font-size: 16px;
     font-weight: bold;
     margin: 0;
+    padding-bottom: 5px;
   }
 
   .card-trip p {
@@ -102,4 +102,8 @@
     text-decoration: none;
     color: #5F5F5F;
   }
+}
+
+h2.card-trip-pricing {
+  margin-top: 5px;
 }
