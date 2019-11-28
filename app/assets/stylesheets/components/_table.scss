@@ -57,3 +57,20 @@ tbody tr:nth-child(odd){
 tbody tr:hover {
   background-color: #CCCCCC;
 }
+
+.fas {
+  color: white;
+}
+
+
+.reservation-pending {
+  background-color: #DABC2A;
+}
+
+.reservation-confirmed{
+  background-color: #4DD599;
+}
+
+.reservation-declined {
+  background-color: #D23333;
+}
