@@ -41,15 +41,7 @@
   text-align: center;
 }
 
-// Button new equipment
-//ci-git ce commentaire en rappel de ne SURTOUT PAS REÉCRIRE LES CLASSES BOOSTRAP!!!!!!}
-
-// Reservation form
-.form-new-reservation {
-  display: flex;
-  flex-direction: column;
-  width: 400px;
-  align-content: center;
+.new-reservation {
+  border-radius: 10px;
+  background-color: white;
 }
-
-

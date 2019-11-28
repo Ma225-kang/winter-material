@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :reservations, only: [:index]
   resources :equipment, only: [:show] do
-    resources :reservations, only: [:new, :create]
+    resources :reservations, only: [:create]
   end
 
   #pour que le owner voit ses equipements
