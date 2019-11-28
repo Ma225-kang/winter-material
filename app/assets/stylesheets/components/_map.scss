@@ -1,14 +1,17 @@
 .map-container {
   display: flex;
   justify-content: center;
-
+  position: relative;
+  padding-top: 20px;
 }
 
 #map {
-  border-radius: 5px;
   width: 100%;
-  border: solid 10px white;
   margin-top: 20px;
+  box-shadow: 1px 1px 10px 1px grey;
+  top: 45px;
+  position: sticky;
+
 }
 
 .mapboxgl-popup {
