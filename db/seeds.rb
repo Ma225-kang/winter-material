@@ -8,6 +8,17 @@
 
 require 'faker'
 
+status = ["declined", "accepted", "pending"]
+
+puts "Cleaning db..."
+
+Reservation.destroy_all
+Equipment.destroy_all
+User.destroy_all
+
+puts "starting seeds..."
+
+
 first_equipment = Equipment.new(
     name: "Pair of skis",
     description: "Very good condition",
@@ -56,6 +67,57 @@ sixth_equipment = Equipment.new(
     photo: File.open(Rails.root.join("db/fixtures/images/capski.jpeg"))
   )
 
+seventh_equipment = Equipment.new(
+    name: "Ski helmet",
+    description: "Like new",
+    address: "Lille",
+    price_per_day: 5,
+    photo: File.open(Rails.root.join("db/fixtures/images/ski-helmet2.jpeg"))
+  )
+
+
+eighth_equipment = Equipment.new(
+    name: "Ski outfit",
+    description: "Clean",
+    address: "Marseille",
+    price_per_day: 5,
+    photo: File.open(Rails.root.join("db/fixtures/images/skioutfit.jpeg"))
+  )
+
+nineth_equipment = Equipment.new(
+    name: "snowboard",
+    description: "Brand new",
+    address: "Nice",
+    price_per_day: 5,
+    photo: File.open(Rails.root.join("db/fixtures/images/snowboard.jpeg"))
+  )
+
+tenth_equipment = Equipment.new(
+    name: "Ski glasses",
+    description: "Fashion",
+    address: "Brest",
+    price_per_day: 5,
+    photo: File.open(Rails.root.join("db/fixtures/images/skiglasses.jpeg"))
+  )
+
+
+eleventh_equipment = Equipment.new(
+    name: "skis",
+    description: "Size 40",
+    address: "Saint Malo",
+    price_per_day: 5,
+    photo: File.open(Rails.root.join("db/fixtures/images/skishoes.jpeg"))
+  )
+
+twelveth_equipment = Equipment.new(
+    name: "Winter cap",
+    description: "Soft and warm",
+    address: "Strasbourg",
+    price_per_day: 5,
+    photo: File.open(Rails.root.join("db/fixtures/images/wintercap.jpeg"))
+  )
+
+
 # equipment_names = ["skis","outfit","helmet","gloves","wool socks","my grandma sweater"]
 # description = ["good state", "dirty but useable", "old but useful", "have fun"]
 # cities = ['Nantes', 'Paris', 'Bordeaux', 'Lyon' ]
@@ -72,15 +134,6 @@ sixth_equipment = Equipment.new(
 
 # end
 
-status = ["declined", "accepted", "pending"]
-
-puts "Cleaning db..."
-
-Reservation.destroy_all
-Equipment.destroy_all
-User.destroy_all
-
-puts "starting seeds..."
 
 mn = User.new(first_name: "Marie", last_name: "Christmas", email: "marie-noelle@example.com", password: "password")
 mn.remote_photo_url = "https://images.unsplash.com/photo-1524593689594-aae2f26b75ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
@@ -119,6 +172,25 @@ fifth_equipment.save!
 sixth_equipment.owner = arthur
 sixth_equipment.save!
 
+seventh_equipment.owner = mn
+seventh_equipment.save!
+
+eighth_equipment.owner = mn
+eighth_equipment.save!
+
+nineth_equipment.owner = tom
+nineth_equipment.save!
+
+tenth_equipment.owner = lyly
+tenth_equipment.save!
+
+eleventh_equipment.owner = arthur
+eleventh_equipment.save!
+
+twelveth_equipment.owner = elsa
+twelveth_equipment.save!
+
+
 
 # attributes.each_with_index do |attr, index|
 #   equipment = Equipment.new(attr)
@@ -128,10 +200,29 @@ sixth_equipment.save!
 #   sleep(1)
 # end
 
-reservation = Reservation.new(equipment: first_equipment, user: mn, start_date: Faker::Date.forward(days: 2), end_date: Faker::Date.forward(days: 23),status: status.sample)
-reservation = Reservation.new(equipment: second_equipment, user: lyly, start_date: Faker::Date.forward(days: 2), end_date: Faker::Date.forward(days: 23),status: status.sample)
-reservation = Reservation.new(equipment: third_equipment, user: ophe, start_date: Faker::Date.forward(days: 2), end_date: Faker::Date.forward(days: 23),status: status.sample)
-reservation = Reservation.new(equipment: fourth_equipment, user: lyly, start_date: Faker::Date.forward(days: 2), end_date: Faker::Date.forward(days: 23),status: status.sample)
+reservation1 = Reservation.new(equipment: first_equipment, user: mn, start_date: Faker::Date.forward(days: 2), end_date: Faker::Date.forward(days: 23),status: status.sample)
+reservation1.save!
+
+reservation2 = Reservation.new(equipment: second_equipment, user: lyly, start_date: Faker::Date.forward(days: 2), end_date: Faker::Date.forward(days: 23),status: status.sample)
+reservation2.save!
+
+reservation3 = Reservation.new(equipment: third_equipment, user: ophe, start_date: Faker::Date.forward(days: 2), end_date: Faker::Date.forward(days: 23),status: status.sample)
+reservation3.save!
+
+reservation4 = Reservation.new(equipment: fourth_equipment, user: lyly, start_date: Faker::Date.forward(days: 2), end_date: Faker::Date.forward(days: 23),status: status.sample)
+reservation4.save!
+
+reservation5 = Reservation.new(equipment: fifth_equipment, user: mn, start_date: Faker::Date.forward(days: 2), end_date: Faker::Date.forward(days: 23),status: status.sample)
+reservation5.save!
+
+reservation6 = Reservation.new(equipment: sixth_equipment, user: lyly, start_date: Faker::Date.forward(days: 2), end_date: Faker::Date.forward(days: 23),status: status.sample)
+reservation6.save!
+
+reservation7 = Reservation.new(equipment: seventh_equipment, user: ophe, start_date: Faker::Date.forward(days: 2), end_date: Faker::Date.forward(days: 23),status: status.sample)
+reservation7.save!
+
+reservation8 = Reservation.new(equipment: eighth_equipment, user: lyly, start_date: Faker::Date.forward(days: 2), end_date: Faker::Date.forward(days: 23),status: status.sample)
+reservation8.save!
 
   # reservation = Reservation.new(equipment: Equipment.all.sample, user: mn , start_date: Faker::Date.forward(days: 2), end_date: Faker::Date.forward(days: 23),status: status.sample)
   # reservation.save!
