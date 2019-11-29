@@ -4,13 +4,13 @@
     <%= cl_image_tag @equipment.photo, class: 'equipment-photo'%>
     <div class="booking-box">
       <div class="booking-info">
-        <p class="price-per-day"><strong> <%= @equipment.price_per_day %>€/day</strong></p>
+        <span class="price-per-day"><strong> <%= @equipment.price_per_day %>€/day</strong></span>
         <div class="avatar-owner">
           <p><%= cl_image_tag @equipment.owner.photo, class: "avatar-equipment mr-2" %><%= @equipment.owner.first_name%></p>
         </div>
         <h1><%= @equipment.name.capitalize %></h1>
-        <i class="fas fa-home"></i> <%= @equipment.address.capitalize %> <br>
-        <i class="fas fa-tag"></i> <%= @equipment.description.capitalize %>
+        <i class="fas fa-home"></i> <span class="info-product"><%= @equipment.address.capitalize %></span><br>
+        <i class="fas fa-tag"></i> <span class="info-product"><%= @equipment.description.capitalize %></span>
         <p class="description-owner"><em>"Item in good condition, I barely use it because I don't ski that much! It's a good deal you've got here :)"</em></p>
       </div>
 
