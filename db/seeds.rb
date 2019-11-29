@@ -71,7 +71,7 @@ seventh_equipment = Equipment.new(
     name: "Ski helmet",
     description: "Like new",
     address: "Lille",
-    price_per_day: 5,
+    price_per_day: 50,
     photo: File.open(Rails.root.join("db/fixtures/images/ski-helmet2.jpeg"))
   )
 
@@ -80,7 +80,7 @@ eighth_equipment = Equipment.new(
     name: "Ski outfit",
     description: "Clean",
     address: "Marseille",
-    price_per_day: 5,
+    price_per_day: 40,
     photo: File.open(Rails.root.join("db/fixtures/images/skioutfit.jpeg"))
   )
 
@@ -88,24 +88,24 @@ nineth_equipment = Equipment.new(
     name: "snowboard",
     description: "Brand new",
     address: "Nice",
-    price_per_day: 5,
+    price_per_day: 69,
     photo: File.open(Rails.root.join("db/fixtures/images/snowboard.jpeg"))
   )
 
 tenth_equipment = Equipment.new(
     name: "Ski glasses",
-    description: "Fashion",
+    description: "Good condition",
     address: "Brest",
-    price_per_day: 5,
+    price_per_day: 15,
     photo: File.open(Rails.root.join("db/fixtures/images/skiglasses.jpeg"))
   )
 
 
 eleventh_equipment = Equipment.new(
     name: "skis",
-    description: "Size 40",
+    description: "Good quality",
     address: "Saint Malo",
-    price_per_day: 5,
+    price_per_day: 60,
     photo: File.open(Rails.root.join("db/fixtures/images/skishoes.jpeg"))
   )
 
@@ -113,7 +113,7 @@ twelveth_equipment = Equipment.new(
     name: "Winter cap",
     description: "Soft and warm",
     address: "Strasbourg",
-    price_per_day: 5,
+    price_per_day: 20,
     photo: File.open(Rails.root.join("db/fixtures/images/wintercap.jpeg"))
   )
 
