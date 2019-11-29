@@ -19,9 +19,9 @@
             <%= image_tag "skiing.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Rent an equipment", root_path, class: "dropdown-item" %>
-            <%= link_to "My equipment bookings", reservations_path, class: "dropdown-item" %>
-            <%= link_to "Put my equipment to rent", new_owner_equipment_path, class: "dropdown-item" %>
+            <%= link_to "Book equipment", root_path, class: "dropdown-item" %>
+            <%= link_to "My bookings", reservations_path, class: "dropdown-item" %>
+            <%= link_to "Rent equipment", new_owner_equipment_path, class: "dropdown-item" %>
             <%= link_to "Reservations requests", owner_reservations_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
