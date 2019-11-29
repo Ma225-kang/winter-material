@@ -14,11 +14,18 @@
           <p class="description-owner"><em>"Item in good condition, I barely use it because I don't ski that much! It's a good deal you've got here :)"</em></p>
         </div>
         <div class="booking-form text-center">
-          <h2>Book now</h2>
-          <%= simple_form_for [@equipment, @reservation] do |f| %>
-          <%= f.input :start_date, required: true, as: :date, html5: true, :label => "Pick your start date", input_html: { :style=> 'width: 180px', value: Date.today } %>
-          <%= f.input :end_date, required: true, as: :date, html5: true, :label => "Pick your end date", input_html: { :style=> 'width: 180px' }  %>
-          <%= f.submit 'Book', class: "button reservation" %>
+          <% if current_user != @equipment.owner %>
+            <h2>Book now</h2>
+            <%= simple_form_for [@equipment, @reservation] do |f| %>
+              <%= f.input :start_date, required: true, as: :date, html5: true, :label => "Pick your start date", input_html: { :style=> 'width: 180px', value: Date.today } %>
+              <%= f.input :end_date, required: true, as: :date, html5: true, :label => "Pick your end date", input_html: { :style=> 'width: 180px' }  %>
+              <%= f.submit 'Book', class: "button reservation" %>
+            <% end %>
+          <% else %>
+            <div class="msg-added">
+              <p><i class=“fas fa-thumbs-up”></i></p>
+              <p>Your equipment has been added !</p>
+            </div>
           <% end %>
         </div>
       </div>
