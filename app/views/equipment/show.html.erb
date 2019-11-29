@@ -1,38 +1,36 @@
-<div class="container equipment-show">
-
-  <div class="booking">
-    <%= cl_image_tag @equipment.photo, class: 'equipment-photo'%>
-    <div class="booking-box">
-      <div class="booking-info">
-        <span class="price-per-day"><strong> <%= @equipment.price_per_day %>€/day</strong></span>
-        <div class="avatar-owner">
-          <p><%= cl_image_tag @equipment.owner.photo, class: "avatar-equipment mr-2" %><%= @equipment.owner.first_name%></p>
+<div class="global-equipment">
+  <div class="container equipment-show">
+    <div class="booking">
+      <%= cl_image_tag @equipment.photo, class: 'equipment-photo'%>
+      <div class="booking-box">
+        <div class="booking-info">
+          <span class="price-per-day"><strong> <%= @equipment.price_per_day %>€/day</strong></span>
+          <div class="avatar-owner">
+            <p><%= cl_image_tag @equipment.owner.photo, class: "avatar-equipment mr-2" %><%= @equipment.owner.first_name%></p>
+          </div>
+          <h1><%= @equipment.name.capitalize %></h1>
+          <i class="fas fa-home"></i> <span class="info-product"><%= @equipment.address.capitalize %></span><br>
+          <i class="fas fa-tag"></i> <span class="info-product"><%= @equipment.description.capitalize %></span>
+          <p class="description-owner"><em>"Item in good condition, I barely use it because I don't ski that much! It's a good deal you've got here :)"</em></p>
         </div>
-        <h1><%= @equipment.name.capitalize %></h1>
-        <i class="fas fa-home"></i> <span class="info-product"><%= @equipment.address.capitalize %></span><br>
-        <i class="fas fa-tag"></i> <span class="info-product"><%= @equipment.description.capitalize %></span>
-        <p class="description-owner"><em>"Item in good condition, I barely use it because I don't ski that much! It's a good deal you've got here :)"</em></p>
+        <div class="booking-form text-center">
+          <h2>Book now</h2>
+          <%= simple_form_for [@equipment, @reservation] do |f| %>
+          <%= f.input :start_date, required: true, as: :date, html5: true, :label => "Pick your start date", input_html: { :style=> 'width: 180px', value: Date.today } %>
+          <%= f.input :end_date, required: true, as: :date, html5: true, :label => "Pick your end date", input_html: { :style=> 'width: 180px' }  %>
+          <%= f.submit 'Book', class: "button reservation" %>
+          <% end %>
+        </div>
       </div>
-
-      <div class="booking-form text-center">
-        <h2>Book now</h2>
-        <%= simple_form_for [@equipment, @reservation] do |f| %>
-        <%= f.input :start_date, required: true, as: :date, html5: true, :label => "Pick your start date", input_html: { :style=> 'width: 180px', value: Date.today } %>
-        <%= f.input :end_date, required: true, as: :date, html5: true, :label => "Pick your end date", input_html: { :style=> 'width: 180px' }  %>
-        <%= f.submit 'Book', class: "button reservation" %>
-        <% end %>
+    </div>
+    <div class="map-container">
+      <div
+        id="map"
+        style="width: 40vw;
+        height: 100vh;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     </div>
   </div>
-
-  <div class="map-container">
-    <div
-      id="map"
-      style="width: 40vw;
-      height: 90vh;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
-  </div>
-
 </div>
