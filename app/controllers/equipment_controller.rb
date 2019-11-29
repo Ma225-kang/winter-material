@@ -22,5 +22,13 @@ class EquipmentController < ApplicationController
   def show
     @equipment = Equipment.find(params[:id])
     @reservation = Reservation.new
+
+    @markers = [
+      {
+        lat: @equipment.latitude,
+        lng: @equipment.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { equipment: @equipment }),
+        image_url: helpers.asset_url('pointer-ski.png')
+      }]
   end
 end
