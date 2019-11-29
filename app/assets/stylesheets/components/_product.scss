@@ -1,6 +1,15 @@
+.global-equipment {
+  background: #EAF7FD;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #EAF7FD, #76CFF0, #EAF7FD);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #EAF7FD, #76CFF0, #EAF7FD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
 .equipment-show {
   display: flex;
   justify-content: space-evenly;
+  min-height: 100vh;
+  padding: 0 15px 20px 15px;
 
   .map-container {
     border-radius: 10px;
@@ -11,17 +20,21 @@
     position: relative;
     margin-top: 20px;
     width: 90%;
-    height: 90vh;
+    height: 100vh;
     background-color: white;
-    padding: 20px;
+    padding: 30px 20px 20px 20px;
 
       .booking-box {
         display: flex;
         justify-content: space-between;
+        padding-top: 10px;
+        background-color: #F1F5F2;
+        margin-top: 22px;
+
       }
 
       .booking-info {
-        padding: 10px 30px 0 5px;
+        padding: 10px 15px 0 20px;
        }
 
       .description-owner {
@@ -32,7 +45,7 @@
 
       h1 {
         padding: 0 0 5px 0;
-        font-size: 25px;
+        font-size: 23px;
         text-align: left;
       }
 
@@ -44,6 +57,8 @@
 
       .avatar-owner {
         text-align: left;
+        padding-top: 5px;
+        padding-left: 5px;
       }
 
       .price-per-day {
