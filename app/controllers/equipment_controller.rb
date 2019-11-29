@@ -2,9 +2,14 @@ class EquipmentController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
   def index
     @user = User.new
-    @equipment = Equipment.geocoded
 
-    @markers = @equipment.map do |equip|
+    if params[:query].present?
+      @equipments = Equipment.search_name_and_description(params[:query]).geocoded
+    else
+      @equipments = Equipment.geocoded
+    end
+
+    @markers = @equipments.map do |equip|
       {
         lat: equip.latitude,
         lng: equip.longitude,
