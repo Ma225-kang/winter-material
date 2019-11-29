@@ -19,7 +19,7 @@
     <div class="box-item">
       <div class="item">
         <% if @equipments.empty? %>
-          <%= "Sorry, we don't know this equipment" %>
+          <span class="sorry-message"><%= "Sorry, item not found!" %> <i class="far fa-sad-tear"></i></span>
         <% else %>
           <% @equipments.each do |item| %>
             <% if current_user != item.owner %>
