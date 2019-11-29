@@ -10,7 +10,7 @@ require 'faker'
 
 status = ["declined", "accepted", "pending"]
 
-puts "Cleaning db..."
+puts "Good conditioning db..."
 
 Reservation.destroy_all
 Equipment.destroy_all
@@ -78,7 +78,7 @@ seventh_equipment = Equipment.new(
 
 eighth_equipment = Equipment.new(
     name: "Ski outfit",
-    description: "Clean",
+    description: "Good condition",
     address: "Marseille",
     price_per_day: 40,
     photo: File.open(Rails.root.join("db/fixtures/images/skioutfit.jpeg"))
