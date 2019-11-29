@@ -19,23 +19,28 @@
 
 
         <% @equipment.each do |item| %>
-          <%= link_to equipment_path(item), class: "card-link" do %>
-          <div class="card-trip">
-            <%= cl_image_tag item.photo, class: "image-pdt-card" %>
-            <div class="card-trip-infos">
-              <div>
-                <h2><%= item.name.capitalize %></h2>
-                <p><%= item.description.capitalize %></p>
+          <% if current_user != item.owner %>
+            <%= link_to equipment_path(item), class: "winter-card-link" do %>
+            <div class="card-trip">
+              <%= cl_image_tag item.photo, crop: :fill, height: 100 %>
+              <div class="card-trip-infos">
+                <div>
+                  <h2><%= item.name.capitalize %></h2>
+                  <p><%= item.description.capitalize %></p>
+                </div>
+                <h2 class="card-trip-pricing"><%= item.price_per_day %><%= '€ /day' %></h2>
+                <%= cl_image_tag item.owner.photo,class: "card-trip-user avatar-bordered"%>
               </div>
-              <h2 class="card-trip-pricing"><%= item.price_per_day %><%= '€/day' %></h2>
-              <%= cl_image_tag item.owner.photo,class: "card-trip-user avatar-bordered"%>
-            </div>
-          </div>
+           </div>
+            <% end %>
           <% end %>
         <% end %>
       </div>
     </div>
+
     <div class="map-container index-map-container">
+
+
       <div
         id="map"
         style="width: 400px;

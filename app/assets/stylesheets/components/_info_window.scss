@@ -7,8 +7,12 @@
   }
 
   img {
-    width: 30px;
-    height: 30px;
+    width: 100px;
+    height: 70px;
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    padding-bottom: 5px;
   }
 }
 

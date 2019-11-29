@@ -33,6 +33,7 @@
 }
 
 .card-product .card-product-infos {
+  background-image: asset-url('ski.jpg');
   padding: 20px;
 }
 
@@ -58,7 +59,6 @@
     .card-trip {
     overflow: hidden;
     background: white;
-    width: 270px;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
   }
 
@@ -98,7 +98,7 @@
     height: 40px;
   }
 
-  .card-link {
+  .winter-card-link {
     text-decoration: none;
     color: #5F5F5F;
   }

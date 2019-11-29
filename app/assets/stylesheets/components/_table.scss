@@ -20,7 +20,9 @@ table {
 
 
 thead {
-  background-color: #4DD599;
+  background: #0f0c29;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   th {
     color: white;
@@ -31,9 +33,9 @@ thead {
 }
 
 tbody {
-  border-left: 0.5px dashed #4DD599;
-  border-right: 0.5px dashed #4DD599;
-  border-bottom: 0.5px dashed #4DD599;
+  border-left: 0.5px dashed #262891;
+  border-right: 0.5px dashed #262891;
+  border-bottom: 0.5px dashed #262891;
 
 }
 
@@ -56,4 +58,46 @@ tbody tr:nth-child(odd){
 
 tbody tr:hover {
   background-color: #CCCCCC;
+}
+
+.material-title {
+  padding: 10px;
+}
+
+.date-column {
+  width: 200px;
+}
+
+
+
+.reservation-pending {
+  background-color: white ;
+  border: 2px solid #DABC2A ;
+  color: #DABC2A;
+  border-radius: 5px;
+  width: 120px;
+  padding: 3px;
+}
+
+.reservation-confirmed{
+  background-color: white;
+  border: 2px solid #262891;
+  color: #262891;
+  border-radius: 5px;
+  width: 120px;
+  padding: 3px;
+}
+
+.reservation-declined {
+  background-color: white;
+  border: 2px solid #D23333;
+  color: #D23333;
+  border-radius: 5px;
+  width: 120px;
+  padding: 3px;
+}
+
+.center-answer {
+  display: flex;
+  justify-content: center;
 }

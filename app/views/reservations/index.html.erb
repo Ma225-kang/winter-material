@@ -1,39 +1,53 @@
-<div class="container">
-<h2>I am renting ...</h2>
-<table>
-  <thead>
-    <tr>
-      <th id="coin_sup_gauche" scope="col">My equipment</th>
-      <th scope="col">Description</th>
-      <th scope="col">From</th>
-      <th scope="col">To</th>
-      <th scope="col">Total price</th>
-      <th id="coin_sup_droit" scope="col">Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @reservations.each do |reservation| %>
-    <tr>
-      <th scope="row">
-        <%= reservation.equipment.name.capitalize %>
-      </th>
-      <td>
-        <%= reservation.equipment.description %>
-      </td>
-      <td>
-        <%= reservation.start_date %>
-      </td>
-      <td>
-        <%= reservation.end_date %>
-      </td>
-      <td>
-        <%= reservation.total_price %><%= '€' %>
-      </td>
-      <td>
-        <%= reservation.status %>
-      </td>
-    </tr>
-          <% end  %>
-  </tbody>
-</table>
+<div class="background-reservations">
+  <div class="container">
+    <div class="global-table">
+      <div class="material-box">
+        <h2>My bookings...</h2>
+        <table>
+          <thead>
+            <tr>
+              <th id="coin_sup_gauche" scope="col">My equipment</th>
+              <th scope="col">Description</th>
+              <th scope="col">From</th>
+              <th scope="col">To</th>
+              <th scope="col">Total price</th>
+              <th id="coin_sup_droit" scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @reservations.each do |reservation| %>
+              <tr>
+                <th scope="row">
+                  <%= reservation.equipment.name.capitalize %>
+                </th>
+                <td>
+                  <%= reservation.equipment.description %>
+                </td>
+                <td class="date-column">
+                  <%= reservation.start_date %>
+                </td>
+                <td class="date-column">
+                  <%= reservation.end_date %>
+                </td>
+                <td>
+                  <%= reservation.total_price %><%= '€' %>
+                </td>
+                <td>
+                  <div class="center-answer">
+                    <% if reservation.status == "pending" %>
+                      <div class="reservation-pending"><%= reservation.status %> <i class="fas fa-spinner"></i></div>
+                    <% elsif reservation.status == "accepted"%>
+                      <div class="reservation-confirmed"><%= reservation.status  %> <i class="fas fa-check"></i></div>
+                    <% elsif reservation.status == "declined"%>
+                      <div class="reservation-declined"><%= reservation.status  %> <i class="fas fa-times"></i></div>
+                    <% end %>
+                  </div>
+                </td>
+              </tr>
+            <% end  %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
