@@ -25,7 +25,7 @@
             <% if current_user != item.owner %>
               <%= link_to equipment_path(item), class: "winter-card-link" do %>
               <div class="card-trip">
-                <%= cl_image_tag item.photo, crop: :fill, height: 100 %>
+                <%= cl_image_tag item.photo, crop: :fill %>
                 <div class="card-trip-infos">
                   <div>
                     <h2><%= item.name.capitalize %></h2>
