@@ -9,7 +9,7 @@
 require 'faker'
 
 first_equipment = Equipment.new(
-    name: "Pair of freesyle skis",
+    name: "Pair of skis",
     description: "Very good condition",
     address: "Contamines Montjoie",
     price_per_day: 50,
@@ -33,7 +33,7 @@ third_equipment = Equipment.new(
   )
 
 fourth_equipment = Equipment.new(
-    name: "Ski boots",
+    name: "Boots",
     description: "New with tags",
     address: "Lons-le-Saunier",
     price_per_day: 150,

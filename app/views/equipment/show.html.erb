@@ -1,40 +1,38 @@
-<div class="container">
-  <div class="d-flex flex-row flex-wrap justify-content-around align-items-center">
-    <div class="d-flex flex-column">
-      <div class="product-total col-11">
-        <%= cl_image_tag @equipment.photo, class: 'equipment-photo'%>
-          <div class="row justify-content-between">
-            <div class="product-description">
-              <h1><%= @equipment.name.capitalize %></h1>
-              <p><%= @equipment.description.capitalize %></p>
-              <p class="price-per-day"><strong> <%= @equipment.price_per_day %>€/day</strong></p>
-            </div>
-            <div class="owner-card text-center">
-              <%= cl_image_tag @equipment.owner.photo, class: "avatar-equipment" %>
-              <p><%= @equipment.owner.first_name%></p>
-            </div>
-          </div>
-      </div>
-    </div>
+<div class="container equipment-show">
 
-    <div class="reservation col-4 col-xs-12 col-sm-8 col-lg-4">
-      <div class="column">
-        <div class="new-reservation text-center p-3">
-          <h1 class="font-weight-bold">Book now</h1>
-          <%= simple_form_for [@equipment, @reservation] do |f| %>
-            <div class="row justify-content-around">
-              <%= f.input :start_date, required: true, as: :date, html5: true, :label => "Choose your start date", input_html: { :style=> 'width: 180px', value: Date.today } %>
-              <%= f.input :end_date, required: true, as: :date, html5: true, :label => "Choose your end date", input_html: { :style=> 'width: 180px' }  %>
-            </div>
-            <div class="text-center pt-2">
-              <%= f.submit 'Book', class: "button reservation" %>
-            </div>
-          <% end %>
+  <div class="booking">
+    <%= cl_image_tag @equipment.photo, class: 'equipment-photo'%>
+    <div class="booking-box">
+      <div class="booking-info">
+        <p class="price-per-day"><strong> <%= @equipment.price_per_day %>€/day</strong></p>
+        <div class="avatar-owner">
+          <p><%= cl_image_tag @equipment.owner.photo, class: "avatar-equipment mr-2" %><%= @equipment.owner.first_name%></p>
         </div>
-        <div class="text-right mt-2">
-          <%= link_to '<< Back to listing', root_path %>
-        </div>
+        <h1><%= @equipment.name.capitalize %></h1>
+        <i class="fas fa-home"></i> <%= @equipment.address.capitalize %> <br>
+        <i class="fas fa-tag"></i> <%= @equipment.description.capitalize %>
+        <p class="description-owner"><em>"Item in good condition, I live in Paris so not so many occasions to use it! It's a good deal you've got here :)"</em></p>
+      </div>
+
+      <div class="booking-form text-center">
+        <h2>Book now</h2>
+        <%= simple_form_for [@equipment, @reservation] do |f| %>
+        <%= f.input :start_date, required: true, as: :date, html5: true, :label => "Pick your start date", input_html: { :style=> 'width: 180px', value: Date.today } %>
+        <%= f.input :end_date, required: true, as: :date, html5: true, :label => "Pick your end date", input_html: { :style=> 'width: 180px' }  %>
+        <%= f.submit 'Book', class: "button reservation" %>
+        <% end %>
       </div>
     </div>
   </div>
+
+  <div class="map-container">
+    <div
+      id="map"
+      style="width: 40vw;
+      height: 90vh;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+
 </div>

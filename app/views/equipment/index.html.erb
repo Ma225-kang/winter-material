@@ -31,17 +31,16 @@
                 <h2 class="card-trip-pricing"><%= item.price_per_day %><%= '€ /day' %></h2>
                 <%= cl_image_tag item.owner.photo,class: "card-trip-user avatar-bordered"%>
               </div>
-            </div>
+           </div>
             <% end %>
           <% end %>
         <% end %>
       </div>
     </div>
 
+    <div class="map-container index-map-container">
 
 
-
-    <div class="map-container">
       <div
         id="map"
         style="width: 400px;
